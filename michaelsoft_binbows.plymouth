@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Michaelsoft Binbows
+Description=Retro boot animation.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/michaelsoft_binbows/animation
+ScriptFile=/usr/share/plymouth/themes/michaelsoft_binbows/michaelsoft_binbows.script

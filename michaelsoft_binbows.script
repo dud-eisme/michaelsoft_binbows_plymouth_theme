@@ -1,0 +1,20 @@
+# Set Michaelsoft Teal Background
+Window.SetBackgroundTopColor(0.00, 0.415, 0.43);
+Window.SetBackgroundBottomColor(0.00, 0.415, 0.43);
+
+# Load the 17 frames
+for (i = 1; i <= 17; i++)
+    anim_frames[i] = Image("animation-" + i + ".png");
+anim_sprite = Sprite();
+
+anim_sprite.SetX(Window.GetWidth() / 2 - anim_frames[1].GetWidth() / 2);
+anim_sprite.SetY(Window.GetHeight() / 2 - anim_frames[1].GetHeight() / 2);
+
+progress = 1;
+
+fun refresh_callback (time) {
+    frame_index = (Math.Int(progress / 3) % 17) + 1; # Adjusted for 30fps
+    anim_sprite.SetImage(anim_frames[frame_index]);
+    progress++;
+}
+Plymouth.SetRefreshFunction(refresh_callback);
